@@ -42,6 +42,7 @@ will give you that
 ```
 
 which Github parses like this
+
 | variable           | default       |required| description                            |
 |--------------------|---------------|--------|----------------------------------------|
 |datacenter          |ams03          |No      |Data center to provision in             |
