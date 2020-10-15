@@ -20,6 +20,7 @@ variable "datacenter" {
 
 variable "key_name" { 
   description = "Name or reference of SSH key to provision softlayer instances with"
+  default = ""
 }
 
 variable "servers" {
@@ -28,23 +29,24 @@ variable "servers" {
 
 ```
 
-
 Doing this `$ python hcl2mdt.py variables.tf`
 
 will give you that 
 ```
-| variable           | default       |required| description                            |
-|--------------------|---------------|--------|----------------------------------------|
-|datacenter          |ams03          |No      |Data center to provision in             |
-|servers             |               |Yes     |Number of servers to provision          |
-|key_name            |               |Yes     |Name or reference of SSH key to provision softlayer instances with|
+| Variable   | Default | Required | Description                                                        |
+|------------|---------|----------|--------------------------------------------------------------------|
+| datacenter | ams03   | No       | Data center to provision in                                        |
+| servers    |         | Yes      | Number of servers to provision                                     |
+| key_name   | ""      | Yes      | Name or reference of SSH key to provision softlayer instances with |
 
 ```
 
 which Github parses like this
 
-| variable           | default       |required| description                            |
-|--------------------|---------------|--------|----------------------------------------|
-|datacenter          |ams03          |No      |Data center to provision in             |
-|servers             |               |Yes     |Number of servers to provision          |
-|key_name            |               |Yes     |Name or reference of SSH key to provision softlayer instances with|
+| Variable   | Default | Required | Description                                                        |
+|------------|---------|----------|--------------------------------------------------------------------|
+| datacenter | ams03   | No       | Data center to provision in                                        |
+| servers    |         | Yes      | Number of servers to provision                                     |
+| key_name   | ""      | Yes      | Name or reference of SSH key to provision softlayer instances with |
+
+if you wish to specify a default for blank values you can do this `$ python hcl2mdt.py variables.tf n/a` and it will insert n/a in any place where there is no default value
